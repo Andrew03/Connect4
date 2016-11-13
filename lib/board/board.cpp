@@ -9,15 +9,11 @@ Board::Board() {
   }
 }
 
-/**
- * weird bug entering 1's and 2's all a sudden switches board
- */
 bool Board::insertPiece(Piece::Color color, int col) {
-  //--col;
-  if (m_board.at(6).at(col) != nullptr) {
+  int index = NUM_ROWS - 1;
+  if (m_board.at(index).at(col) != nullptr) {
     return false;
   } else {
-    int index = 6;
     while (index > 0 && m_board.at(index - 1).at(col) == nullptr) {
       --index;
     }
@@ -33,11 +29,11 @@ bool Board::isGameOver() const {
         break;
       } else {
         if (m_board.at(i).at(j)->getColor() == Piece::Color::RED) {
-          // scan for win
           if (scan(Piece::Color::RED, i, j)) {
             return true;
           }
-        } else { if (scan(Piece::Color::BLUE, i, j)) {
+        } else { 
+          if (scan(Piece::Color::BLUE, i, j)) {
             return true;
           }
         }

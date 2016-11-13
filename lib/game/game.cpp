@@ -1,7 +1,7 @@
 #include "game.h"
 #include <iostream>
 
-Game::Game() : m_board(new Board()){
+Game::Game() : m_board(new Board()) {
   m_player = Piece::Color::RED;
 }
 
@@ -17,7 +17,7 @@ auto Game::getMove() const -> int {
   int col;
   std::cin >> col;
   while (std::cin.fail() || col < 1 || col > 7) {
-    std::cout << "Invalid column! Enter a number 1-7" << std::endl << std::endl;
+    std::cout << "Invalid column! Enter a number 1 through 7" << std::endl << std::endl;
     showBoard(); 
     std::cout << (m_player == Piece::Color::RED ? "Red" : "Blue") << " to move: ";
     std::cin.clear();
