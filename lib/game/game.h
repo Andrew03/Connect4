@@ -2,7 +2,6 @@
 #define LIB_GAME_H
 
 #include "../board/board.h"
-#include "../piece/piece.h"
 
 class Game {
   public:

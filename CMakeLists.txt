@@ -20,7 +20,6 @@ set( CMAKE_CXX_FLAGS "-std=c++11 -Wall -Wextra -Werror" )
 #	brings header files into the project
 include_directories( ${PROJECT_SOURCE_DIR} )
 add_subdirectory( ${PROJECT_SOURCE_DIR}/lib/board )
-add_subdirectory( ${PROJECT_SOURCE_DIR}/lib/piece )
 add_subdirectory( ${PROJECT_SOURCE_DIR}/lib/game )
 
 #	sets all the source files to the SOURCES variable
@@ -30,5 +29,4 @@ set( GLOB SOURCES "*.cpp" )
 #	adds the executable file
 add_executable( connect4 ${PROJECT_SOURCE_DIR}/main.cpp )
 target_link_libraries( connect4 board )
-target_link_libraries( connect4 piece )
 target_link_libraries( connect4 game )
